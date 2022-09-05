@@ -13,13 +13,15 @@ const images = [
   },
 ];
 
-const galleryRef = document.querySelector('.gallery')
-console.log(galleryRef);
+const galleryEl = document.querySelector('.gallery')
+galleryEl.style.display = 'flex';
+galleryEl.style.gap = '30px'
+console.log(galleryEl);
 
 for (const image of images) {
   const galleryItemEl = document.createElement('Img');
   galleryItemEl.src = image.url;
   galleryItemEl.alt = image.alt;
-  galleryRef.append(galleryItemEl)
-
+  galleryItemEl.width = 500;
+  galleryEl.append(galleryItemEl);
 }
