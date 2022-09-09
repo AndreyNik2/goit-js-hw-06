@@ -18,10 +18,19 @@ galleryEl.style.display = 'flex';
 galleryEl.style.gap = '30px'
 console.log(galleryEl);
 
-for (const image of images) {
-  const galleryItemEl = document.createElement('Img');
-  galleryItemEl.src = image.url;
-  galleryItemEl.alt = image.alt;
-  galleryItemEl.width = 500;
-  galleryEl.append(galleryItemEl);
+
+
+
+const makeNewGallaryElementMarkup = ({url, alt}) => {
+  return `<img src='${url}' alt='${alt}' width="500"></img>`
 }
+
+
+const makeNewGallaryElements = images
+  .map(makeNewGallaryElementMarkup)
+  .join('');
+
+console.log(makeNewGallaryElements);
+galleryEl.insertAdjacentHTML('beforeend', makeNewGallaryElements)
+console.log(galleryEl);
+

@@ -5,12 +5,9 @@ inputEl.addEventListener('blur', event => {
     if (event.currentTarget.value.length === 6) {
         inputEl.classList.add('valid');
         inputEl.classList.remove('invalid');
-    } if (event.currentTarget.value.length > 0 & event.currentTarget.value.length < 6) {
+    } if (event.currentTarget.value.length > 0 & event.currentTarget.value.length < 6 || event.currentTarget.value.length > 6) {
         inputEl.classList.add('invalid');
         inputEl.classList.remove('valid');
-    } if (event.currentTarget.value.length > 6) {
-        inputEl.classList.add('invalid');
-        inputEl.classList.remove('valid')
     } if (event.currentTarget.value.length === 0) {
         inputEl.classList.remove('invalid');
         inputEl.classList.remove('valid')
